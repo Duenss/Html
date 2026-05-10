@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreText</title>
+    <link rel="stylesheet" href="styles.css?v=2.0.0">
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="header-branding">
+                <h1 class="app-title">
+                    <span class="brand-avatar">
+                        <img src="https://i.imgur.com/UCY4kH4.png" alt="Avatar" />
+                    </span>
+                    CoreText
+                </h1>
+                <p class="app-subtitle">By: @JvampaRD</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-icon" id="btnSaved" title="Mis Embeds">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                        <polyline points="17 21 17 13 7 13 7 21"/>
+                        <polyline points="7 5 7 11 17 11 17 5"/>
+                    </svg>
+                </button>
+                <button class="btn-icon" id="btnTemplates" title="Plantillas">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <line x1="9" y1="9" x2="15" y2="9"/>
+                        <line x1="9" y1="15" x2="15" y2="15"/>
+                    </svg>
+                </button>
+                <div class="header-divider"></div>
+                <button class="btn-icon theme-toggle" id="btnTheme" title="Cambiar tema">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Left Panel - Optional Elements -->
+        <aside class="column-left scale-up">
+            <div class="editor-elements-wrapper">
+                <section class="section elements-section">
+                    <h3 class="section-title">ELEMENTOS OPCIONALES</h3>
+                    <div class="draggable-list" id="draggableList">
+                        <div class="draggable-item" draggable="true" data-element-type="bot">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4z" />
+                                <path d="M6 20v-1c0-2.21 1.79-4 4-4h4c2.21 0 4 1.79 4 4v1" />
+                            </svg>
+                            <span>Bot</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="author">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span>Autor</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="footer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="12" x2="21" y2="12" />
+                                <polyline points="8 8 12 4 16 8" />
+                                <polyline points="16 16 12 20 8 16" />
+                            </svg>
+                            <span>Pie de página</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="M21 15l-5-5L5 21" />
+                            </svg>
+                            <span>Imagen</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="thumbnail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7" />
+                                <rect x="14" y="3" width="7" height="7" />
+                                <rect x="14" y="14" width="7" height="7" />
+                                <rect x="3" y="14" width="7" height="7" />
+                            </svg>
+                            <span>Miniatura</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="fields">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="8" y1="6" x2="21" y2="6" />
+                                <line x1="8" y1="12" x2="21" y2="12" />
+                                <line x1="8" y1="18" x2="21" y2="18" />
+                                <line x1="3" y1="6" x2="3.01" y2="6" />
+                                <line x1="3" y1="12" x2="3.01" y2="12" />
+                                <line x1="3" y1="18" x2="3.01" y2="18" />
+                            </svg>
+                            <span>Campos</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="color">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="1" />
+                                <circle cx="19" cy="5" r="1" />
+                                <circle cx="5" cy="19" r="1" />
+                                <path d="M12 3a9 9 0 1 0 9 9" />
+                            </svg>
+                            <span>Color</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="section elements-section">
+                    <h3 class="section-title">COMPONENTES</h3>
+                    <div class="draggable-list" id="componentsList">
+                        <div class="draggable-item" draggable="true" data-element-type="row">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="5" width="18" height="5" rx="2" />
+                                <rect x="3" y="14" width="18" height="5" rx="2" />
+                            </svg>
+                            <span>Fila</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="button">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="7" width="18" height="10" rx="2" />
+                            </svg>
+                            <span>Botón</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="link_button">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 13a5 5 0 1 1 7.07-7.07l1.41 1.41" />
+                                <path d="M14 11a5 5 0 1 1-7.07 7.07l-1.41-1.41" />
+                            </svg>
+                            <span>Botón enlace</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="select_menu">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="5" width="18" height="10" rx="2" />
+                                <path d="M8 17l4 4 4-4" />
+                            </svg>
+                            <span>Seleccionar menú</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="user_role_menu">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span>Usuarios/Roles</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="channel_menu">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 6h16" />
+                                <path d="M4 12h10" />
+                                <path d="M4 18h7" />
+                            </svg>
+                            <span>Canales</span>
+                        </div>
+                        <div class="draggable-item" draggable="true" data-element-type="image2">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <path d="M21 15l-5-5L5 21" />
+                            </svg>
+                            <span>Imagen 2</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <!-- Center Panel - Preview -->
+        <main class="column-center scale-up">
+            <div class="preview-wrapper" id="previewWrapper">
+                <div class="discord-container">
+                    <div class="discord-message">
+                        <div class="bot-avatar-wrapper" id="botAvatarWrapper">
+                            <div class="bot-avatar" id="botAvatar">B</div>
+                            <div class="avatar-overlay">Editar</div>
+                        </div>
+                        <div class="message-content">
+                            <div class="bot-username" id="botName">DisEditEmbeds</div>
+                            <div class="message-text empty" id="messageText" data-placeholder="Haz clic para agregar un mensaje...">Haz clic para agregar un mensaje...</div>
+                            <div class="discord-embed" id="embedPreview">
+                                <div class="embed-color-indicator" id="embedColorIndicator">
+                                    <div class="color-box" id="embedColorBox"></div>
+                                    <div>
+                                        <div class="color-label">Color del embed</div>
+                                        <div class="text-muted">Haz clic para cambiar</div>
+                                    </div>
+                                </div>
+                                <div class="embed-body">
+                                    <div class="embed-author empty" id="embedAuthor">Autor del embed</div>
+                                    <div class="embed-inner">
+                                        <div class="embed-content">
+                                            <div class="embed-title empty" id="embedTitle">Título del embed</div>
+                                            <div class="embed-description empty" id="embedDescription">Descripción del embed</div>
+                                            <div class="embed-fields" id="embedFields"></div>
+                                            <div class="embed-footer empty" id="embedFooter">Pie de página</div>
+                                        </div>
+                                        <div class="embed-thumbnail" id="embedThumbnail"></div>
+                                    </div>
+                                </div>
+                                <div class="embed-image" id="embedImage"><span class="image-overlay"></span></div>
+                            </div>
+                            <div class="component-rows" id="componentRows"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Panel - Actions -->
+        <aside class="column-right scale-up">
+            <div class="actions-wrapper">
+                <section class="action-section">
+                    <h3 class="section-title">ACCIONES</h3>
+                    <div class="button-group">
+                        <button id="saveBtn" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                                <polyline points="17 21 17 13 7 13 7 21"/>
+                            </svg>
+                            <span>Guardar Embed</span>
+                        </button>
+                        <button id="copyCodeBtn" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                            </svg>
+                            <span>Copiar JSON</span>
+                        </button>
+                        <div class="form-group" style="margin: 1rem 0;">
+                            <label for="webhookUrl" style="font-size: 0.9rem; color: var(--color-text-secondary);">URL del Webhook de Discord</label>
+                            <input type="url" id="webhookUrl" placeholder="https://discord.com/api/webhooks/..." style="width: 100%; padding: 0.5rem; border: 1px solid var(--color-border); border-radius: 4px; background: var(--color-bg-secondary); color: var(--color-text);">
+                        </div>
+                        <button id="sendBtn" class="btn btn-success">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22,2 15,22 11,13 2,9"/>
+                            </svg>
+                            <span>Enviar a Discord</span>
+                        </button>
+                        <button id="clearBtn" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3 6 5 4 21 4"/>
+                                <path d="M19 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4"/>
+                                <line x1="10" y1="11" x2="10" y2="17"/>
+                                <line x1="14" y1="11" x2="14" y2="17"/>
+                            </svg>
+                            <span>Limpiar Todo</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modals Container -->
+    <div class="modals-container" id="modalContainer"></div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="app-footer">by @JvampaRD</footer>
+    <script src="script.js"></script>
+</body>
+</html>

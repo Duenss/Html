@@ -1,0 +1,26 @@
+{
+  "name": "discord-embed-creator",
+  "version": "1.0.0",
+  "description": "Una aplicación moderna para crear, previsualizar y guardar embeds de Discord",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8000 -c-1",
+    "preview": "npx http-server -p 8000 -c-1 -o",
+    "build": "echo 'No build required - static site'"
+  },
+  "keywords": [
+    "discord",
+    "embed",
+    "creator",
+    "webhook"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
